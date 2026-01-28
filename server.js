@@ -21,7 +21,7 @@ const app = express();
 // ✔ Required for cookie authentication between frontend & backend
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://127.0.0.1:5173", "http://i-volunteer-frontend.vercel.app"],
+    origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://i-volunteer-frontend.vercel.app"],
     credentials: true,
   })
 );
