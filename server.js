@@ -44,7 +44,7 @@ app.use(cookieParser());
 
 // ✔ Health check
 app.get("/", (req, res) => {
-  res.send("Server is ready");
+  res.send("Server is ready v 3");
 });
 
 // ✔ API routes
