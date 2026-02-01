@@ -25,7 +25,7 @@ app.use(
     credentials: true,
   })
 );
-app.options("*", cors({
+app.options(/.*/, cors({
   origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://i-volunteer-frontend.vercel.app"],
   credentials: true,
 }));
@@ -48,7 +48,7 @@ app.use(cookieParser());
 
 // ✔ Health check
 app.get("/", (req, res) => {
-  res.send("Server is ready v 4");
+  res.send("Server is ready v 5");
 });
 
 // ✔ API routes
