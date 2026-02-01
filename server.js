@@ -14,6 +14,7 @@ import userRoute from "./routes/userRoute.js";
 import eventRoute from "./routes/eventRoute.js";
 import tagRoute from "./routes/tagRoute.js";
 
+
 dotenv.config();
 
 const app = express();
@@ -48,13 +49,13 @@ app.use(cookieParser());
 
 // ✔ Health check
 app.get("/", (req, res) => {
-  res.send("Server is ready v 5");
+  res.send("Server is ready v 6");
 });
 
 // ✔ API routes
-app.use("/api", userRoute);
-app.use("/api", eventRoute);
-app.use("/api", tagRoute);
+app.use("api", userRoute);
+app.use("api", eventRoute);
+app.use("api", tagRoute);
 
 // ✔ Connect DB
 connectDB();
