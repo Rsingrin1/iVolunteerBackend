@@ -25,6 +25,10 @@ app.use(
     credentials: true,
   })
 );
+app.options("*", cors({
+  origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://i-volunteer-frontend.vercel.app"],
+  credentials: true,
+}));
 
 console.log("JWT SECRET =", process.env.JWT_SECRET);
 
@@ -44,7 +48,7 @@ app.use(cookieParser());
 
 // ✔ Health check
 app.get("/", (req, res) => {
-  res.send("Server is ready v 3");
+  res.send("Server is ready v 4");
 });
 
 // ✔ API routes
