@@ -35,7 +35,7 @@ connectDB();
 
 // ✔ Health check
 app.get("/", (req, res) => {
-  res.send("Server is ready v 6");
+  res.send("Server is ready v 7");
 });
 
 // ✔ API routes
@@ -76,4 +76,8 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
+// Export as Vercel serverless function handler
 export default app;
+
+// Also export as CommonJS for compatibility
+module.exports = app;
