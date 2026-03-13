@@ -124,8 +124,8 @@ export const logout = async (req, res) => {
     // Clear the token cookie
     res.clearCookie("token", {
       httpOnly: true,
-      secure: false, // set true in prod with HTTPS
-      sameSite: "lax",
+      secure: true, // set true in prod with HTTPS
+      sameSite: "none",
     });
 
     return res.status(200).json({ message: "Logout successful." });
@@ -176,8 +176,8 @@ export const login = async (req, res) => {
     // COOKIE-ONLY: set HTTP-only cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false, // set true in prod with HTTPS
-      sameSite: "lax",
+      secure: true, // set true in prod with HTTPS
+      sameSite: "none",
       path: "/",     // important: send cookie on all API routes
     });
 
@@ -216,7 +216,8 @@ export const passwordResetRequest = async (req, res) => {
       const transporter = nodemailer.default.createTransport({
         host: process.env.GMAIL_HOST,
         port: 587,
-        secure: false,
+        secure: true,
+        sameSite:"none",
         auth: {
           user: process.env.GMAIL_USER,
           pass: process.env.GMAIL_PASS,
