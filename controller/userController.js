@@ -216,6 +216,7 @@ export const passwordResetRequest = async (req, res) => {
       const nodemailer = await import("nodemailer");
       const transporter = nodemailer.default.createTransport({
         host: process.env.GMAIL_HOST,
+        httpOnly: true,
         port: 587,
         secure: true,
         sameSite:"none",
