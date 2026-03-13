@@ -18,6 +18,9 @@ import { requireAdmin, requireAuth } from "../middleware/authMiddleware.js";
 const route = express.Router();
 
 route.post("/user", create);
+route.get("/userTest", (req, res) => {
+  res.send("User route is working"); 
+});
 route.get("/user", requireAuth, getUserById);
 route.get("/users",requireAuth, requireAdmin, getAllUsers);
 route.put("/user", requireAuth, update);
