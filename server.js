@@ -49,7 +49,7 @@ app.use(cookieParser());
 
 // ✔ Health check
 app.get("/", (req, res) => {
-  res.send("Server is ready v 6");
+  res.send("Server is ready v 7");
 });
 
 // ✔ API routes
