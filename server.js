@@ -54,8 +54,8 @@ app.get("/", (req, res) => {
 
 // ✔ API routes
 app.use("/api/", userRoute);
-app.use("api", eventRoute);
-app.use("api", tagRoute);
+app.use("/api/", eventRoute);
+app.use("/api/", tagRoute);
 
 // ✔ Connect DB
 connectDB();
