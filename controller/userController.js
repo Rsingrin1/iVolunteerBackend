@@ -126,6 +126,7 @@ export const logout = async (req, res) => {
       httpOnly: true,
       secure: true, // set true in prod with HTTPS
       sameSite: "none",
+      path: "/",     // important: clear cookie on all API routes
     });
 
     return res.status(200).json({ message: "Logout successful." });
